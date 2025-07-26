@@ -1,11 +1,20 @@
 // tailwind.config.js
-export default {
+module.exports = {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}", // Ensure all source files are scanned
+    './src/**/*.{js,jsx,ts,tsx}', // ✅ ensure your files are included
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        wave: 'wave 1s infinite ease-in-out',
+      },
+      keyframes: {
+        wave: {
+          '0%, 100%': { transform: 'scaleY(0.3)' },
+          '50%': { transform: 'scaleY(1)' },
+        },
+      },
+    },
   },
   plugins: [],
 };

@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+
 export const SignupForm = ({ onClose }) => {
   const navigate = useNavigate();
 
@@ -24,10 +25,11 @@ export const SignupForm = ({ onClose }) => {
 
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:5000/api/signup', {
-        email,
-        password,
-      });
+const response = await axios.post("https://audif-server.onrender.com/api/signup", {
+  email,
+  password,
+});
+
 
       if (response.status === 201) {
         alert('Signup successful! Redirecting to login...');
@@ -44,7 +46,7 @@ export const SignupForm = ({ onClose }) => {
   return (
           <Card className="w-full max-w-md mx-auto mt-20 shadow-2xl border-0 bg-white/90 backdrop-blur-sm">
             <CardHeader className="text-center pb-6 relative">
-              <button onClick={onClose} className="absolute right-4 top-4 text-gray-400 hover:text-gray-600">
+              <button onClick={onClose} className="absolute right-4 top-4 text-gray-400 hover:text-gray-600 ">
                 <X className="h-5 w-5" />
               </button>
               <CardTitle className="text-2xl font-bold text-gray-800">Signup</CardTitle>
@@ -63,7 +65,7 @@ export const SignupForm = ({ onClose }) => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="pl-10 border-2 border-gray-200 focus:border-blue-400 rounded-lg h-12"
+                className="pl-10 border-2 border-gray-200 focus:border-blue-400 rounded-lg h-12  text-black"
                 required
               />
             </div>
@@ -79,7 +81,7 @@ export const SignupForm = ({ onClose }) => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Create a password"
-                className="pl-10 border-2 border-gray-200 focus:border-blue-400 rounded-lg h-12"
+                className="pl-10 border-2 border-gray-200 focus:border-blue-400 rounded-lg h-12 text-black"
                 required
               />
             </div>
@@ -95,7 +97,7 @@ export const SignupForm = ({ onClose }) => {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 placeholder="Confirm your password"
-                className="pl-10 border-2 border-gray-200 focus:border-blue-400 rounded-lg h-12"
+                className="pl-10 border-2 border-gray-200 focus:border-blue-400 rounded-lg h-12 text-black"
                 required
               />
             </div>
