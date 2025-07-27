@@ -84,7 +84,7 @@ const Index = () => {
             {/* ✅ Heading + Paragraph Section */}
             <div className="bg-white text-black text-center py-8 px-4 mt-[60px]">
               <h1 className="text-5xl font-bold text-black-600 mb-4 mt-[20px]" >
-                Free Real Time Voice Translateand<br/> AI Voice Platform
+                Free Real Time Voice Translated<br/> AI Voice Platform
               </h1>
               <p className="text-lg text-[25px]  font-bold  mt-[60px]">
                 Explore Audio to Audio , Text to speech, Audio to Text, and more
